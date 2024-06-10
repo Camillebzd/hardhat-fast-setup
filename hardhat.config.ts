@@ -7,9 +7,9 @@ const PRIVATE_KEY =
   "";
 
 // Polygon
-const MUMBAI_RPC_URL =
-  process.env.MUMBAI_RPC_URL ||
-  "https://polygon-mumbai.g.alchemy.com/v2/your-api-key";
+const AMOY_RPC_URL =
+  process.env.AMOY_RPC_URL ||
+  "https://polygon-amoy.g.alchemy.com/v2/your-api-key";
 const POLYGONSCAN_API_KEY =
   process.env.POLYGONSCAN_API_KEY ||
   "";
@@ -57,9 +57,9 @@ const config: HardhatUserConfig = {
       url: "http://127.0.0.1:8545/",
       chainId: 31337
     },
-    mumbai: {
-      chainId: 80001,
-      url: MUMBAI_RPC_URL,
+    amoy: {
+      chainId: 80002,
+      url: AMOY_RPC_URL,
       accounts: [PRIVATE_KEY],
     },
     sepolia: {
@@ -85,7 +85,7 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      polygonMumbai: POLYGONSCAN_API_KEY,
+      polygonAmoy: POLYGONSCAN_API_KEY,
       sepolia: ETHERSCAN_API_KEY,
       etherlinkTestnet: ETHERLINK_API_KEY,
       arbitrumSepolia: ARBITRUM_SEPOLIA_API_KEY,
