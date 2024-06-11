@@ -24,7 +24,7 @@ You can do the same with the `.env.example` file but remember to rename it `.env
 ## Testnets
 
 Testnets included:
-- Polygon Mumbai
+- Polygon Amoy
 - Ethereum Sepolia
 - Etherlink Testnet
 - Arbitrum Sepolia
