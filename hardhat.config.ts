@@ -22,10 +22,18 @@ const ETHERSCAN_API_KEY =
   process.env.ETHERSCAN_API_KEY ||
   "";
 
+// Etherlink testnet
+const ETHERLINK_TESTNET_RPC_URL =
+  process.env.ETHERLINK_TESTNET_RPC_URL ||
+  "https://node.ghostnet.etherlink.com";
+const ETHERLINK_TESTNET_API_KEY =
+  process.env.ETHERLINK_TESTNET_API_KEY ||
+  "";
+
 // Etherlink
 const ETHERLINK_RPC_URL =
   process.env.ETHERLINK_RPC_URL ||
-  "https://node.ghostnet.etherlink.com";
+  "https://node.mainnet.etherlink.com";
 const ETHERLINK_API_KEY =
   process.env.ETHERLINK_API_KEY ||
   "";
@@ -69,6 +77,11 @@ const config: HardhatUserConfig = {
     },
     etherlinkTestnet: {
       chainId: 128123,
+      url: ETHERLINK_TESTNET_RPC_URL,
+      accounts: [PRIVATE_KEY],
+    },
+    etherlink: {
+      chainId: 42793,
       url: ETHERLINK_RPC_URL,
       accounts: [PRIVATE_KEY],
     },
@@ -87,7 +100,8 @@ const config: HardhatUserConfig = {
     apiKey: {
       polygonAmoy: POLYGONSCAN_API_KEY,
       sepolia: ETHERSCAN_API_KEY,
-      etherlinkTestnet: ETHERLINK_API_KEY,
+      etherlinkTestnet: ETHERLINK_TESTNET_API_KEY,
+      etherlink: ETHERLINK_API_KEY,
       arbitrumSepolia: ARBITRUM_SEPOLIA_API_KEY,
       bscTestnet: BSCSCAN_API_KEY,
     },
@@ -96,8 +110,16 @@ const config: HardhatUserConfig = {
         network: "etherlinkTestnet",
         chainId: 128123,
         urls: {
-          apiURL: "https://testnet-explorer.etherlink.com/api",
-          browserURL: "https://testnet-explorer.etherlink.com"
+          apiURL: "https://testnet.explorer.etherlink.com/api",
+          browserURL: "https://testnet.explorer.etherlink.com"
+        }
+      },
+      {
+        network: "etherlink",
+        chainId: 42793,
+        urls: {
+          apiURL: "https://explorer.etherlink.com/api",
+          browserURL: "https://explorer.etherlink.com"
         }
       }
     ]
